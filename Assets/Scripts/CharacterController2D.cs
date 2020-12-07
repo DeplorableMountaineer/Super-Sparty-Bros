@@ -87,7 +87,8 @@ public class CharacterController2D : MonoBehaviour {
 		if (!playerCanMove || (Time.timeScale == 0f))
 			return;
 
-		// determine horizontal velocity change based on the horizontal input
+		// determine horizontal
+		// velocity change based on the horizontal input
 		_vx = Input.GetAxisRaw ("Horizontal");
 
 		// Determine if running based on the horizontal movement
