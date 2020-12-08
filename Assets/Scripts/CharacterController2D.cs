@@ -266,8 +266,8 @@ public class CharacterController2D : MonoBehaviour
             // After waiting tell the GameManager to reset the game
             yield return new WaitForSeconds(2.0f);
 
-            if (GameManager.gm) // if the gameManager is available, tell it to reset the game
-                GameManager.gm.ResetGame();
+            if (GameManager.Gm) // if the gameManager is available, tell it to reset the game
+                GameManager.Gm.ResetGame();
             else // otherwise, just reload the current level
                 SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
@@ -277,8 +277,8 @@ public class CharacterController2D : MonoBehaviour
     {
         PlaySound(coinSfx);
 
-        if (GameManager.gm) // add the points through the game manager, if it is available
-            GameManager.gm.AddPoints(amount);
+        if (GameManager.Gm) // add the points through the game manager, if it is available
+            GameManager.Gm.AddPoints(amount);
     }
 
     // public function on victory over the level
@@ -288,8 +288,8 @@ public class CharacterController2D : MonoBehaviour
         FreezeMotion();
         _animator.SetTrigger(Victory1);
 
-        if (GameManager.gm) // do the game manager level compete stuff, if it is available
-            GameManager.gm.LevelCompete();
+        if (GameManager.Gm) // do the game manager level compete stuff, if it is available
+            GameManager.Gm.LevelCompete();
     }
 
     // public function to respawn the player at the appropriate location

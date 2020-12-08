@@ -20,59 +20,35 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="44a17850-5dbd-4351-bf2a-090151c70867" name="Default Changelist" comment="Added double jump">
-      <change afterPath="$PROJECT_DIR$/Assets/Animations/CoinController.controller" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Animations/CoinController.controller.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Animations/Coin_Idle.anim" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Animations/Coin_Idle.anim.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Animations/Enemy.controller" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Animations/Enemy.controller.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Animations/Enemy_Idle.anim" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Animations/Enemy_Idle.anim.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Animations/Enemy_Stunned.anim" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Animations/Enemy_Stunned.anim.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Animations/Enemy_Walk.anim" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Animations/Enemy_Walk.anim.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Animations/Rose.controller" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Animations/Rose.controller.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Animations/Rose_Wave.anim" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Animations/Rose_Wave.anim.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Animations/SpartyController.controller" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Animations/SpartyController.controller.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Coin Explosion.prefab" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Coin Explosion.prefab.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Coin.prefab" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Coin.prefab.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/DeathZone.prefab" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/DeathZone.prefab.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Enemy.prefab" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Enemy.prefab.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Moving Enemy.prefab" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Moving Enemy.prefab.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Victory Explosion.prefab" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Victory Explosion.prefab.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Victory.prefab" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Victory.prefab.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Editor/DeleteAllPlayerPrefs.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Editor/DeleteAllPlayerPrefs.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Editor/GameManagerEditor.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Editor/GameManagerEditor.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Background Tree.prefab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Background Tree.prefab.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Clouds_0.prefab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Clouds_0.prefab.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Clouds_1.prefab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Clouds_1.prefab.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Clouds_2.prefab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Clouds_2.prefab.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Clouds_3.prefab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Clouds_3.prefab.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Mountains.prefab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Mountains.prefab.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Standard Assets.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Super Sparty Bros/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Super Sparty Bros/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Super Sparty Bros/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Super Sparty Bros/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/Sparty.controller" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/Sparty.controller.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/Enemy/Enemy_Idle_1.psd.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/Enemy/Enemy_Idle_1.psd.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/Enemy/Enemy_Idle_2.psd.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/Enemy/Enemy_Idle_2.psd.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/Enemy/Enemy_Stun_1.psd.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/Enemy/Enemy_Stun_1.psd.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/Enemy/Enemy_Stun_2.psd.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/Enemy/Enemy_Stun_2.psd.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/Enemy/Enemy_Stun_3.psd.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/Enemy/Enemy_Stun_3.psd.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/Enemy/Enemy_Walk_1.psd.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/Enemy/Enemy_Walk_1.psd.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/Enemy/Enemy_Walk_2.psd.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/Enemy/Enemy_Walk_2.psd.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/Objects/CoinIdle_1.psd.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/Objects/CoinIdle_1.psd.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/Objects/CoinIdle_2.psd.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/Objects/CoinIdle_2.psd.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/Objects/Rose.psd.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/Objects/Rose.psd.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Sparty.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Sparty.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/Background/Clouds.psd.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/Background/Clouds.psd.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/Background/Mountains.psd.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/Background/Mountains.psd.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Enemy.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Enemy.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Tree.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Tree.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/CharacterController2D.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CharacterController2D.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Coin.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Coin.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/DeathZone.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/DeathZone.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemy.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Enemy.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/EnemyStun.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/EnemyStun.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Victory.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Victory.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PlayerPrefManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PlayerPrefManager.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_Scenes/Level 1.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Scenes/Level 1.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/Physics2DSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/Physics2DSettings.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -83,6 +59,9 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Assets/Editor/GameManagerEditor.cs" root0="FORCE_HIGHLIGHTING" />
+  </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
@@ -92,6 +71,9 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/Enemy.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/CharacterController2D.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/EnemyStun.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/PlayerPrefManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Editor/GameManagerEditor.cs" />
       </list>
     </option>
   </component>
@@ -116,6 +98,7 @@
     <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="settings.editor.selected.configurable" value="Errors" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
@@ -148,6 +131,7 @@
       <updated>1607348812638</updated>
       <workItem from="1607348817743" duration="4601000" />
       <workItem from="1607397168502" duration="2170000" />
+      <workItem from="1607448582115" duration="1760000" />
     </task>
     <task id="LOCAL-00001" summary="Added double jump">
       <created>1607368216503</created>
@@ -183,6 +167,10 @@
     <option name="LAST_COMMIT_MESSAGE" value="Added double jump" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="782" y="345" key="SettingsEditor" timestamp="1607450341781">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="782" y="345" key="SettingsEditor/0.0.2560.1400/3840.0.1920.1040@0.0.2560.1400" timestamp="1607450341781" />
     <state x="93" y="93" width="2375" height="1215" key="VCS.FileHistoryDialog" timestamp="1607369298474">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
@@ -191,5 +179,9 @@
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="873" y="433" key="Vcs.Push.Dialog.v2/0.0.2560.1400/3840.0.1920.1040@0.0.2560.1400" timestamp="1607368232590" />
+    <state x="1152" y="545" key="cloudConfig.SelfSettingsDialog" timestamp="1607449512455">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="1152" y="545" key="cloudConfig.SelfSettingsDialog/0.0.2560.1400/3840.0.1920.1040@0.0.2560.1400" timestamp="1607449512455" />
   </component>
 </project>

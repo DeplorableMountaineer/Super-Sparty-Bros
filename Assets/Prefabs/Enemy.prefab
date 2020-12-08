@@ -381,5 +381,5 @@ MonoBehaviour:
   myWaypoints: []
   waitAtWaypointTime: 1
   loopWaypoints: 1
-  stunnedSFX: {fileID: 8300000, guid: 23564130d21e07d49b9073a7a8969d92, type: 3}
-  attackSFX: {fileID: 8300000, guid: 2f0a5065b76748b469e5ec6af0f4f8c0, type: 3}
+  stunnedSfx: {fileID: 8300000, guid: 23564130d21e07d49b9073a7a8969d92, type: 3}
+  attackSfx: {fileID: 8300000, guid: 2f0a5065b76748b469e5ec6af0f4f8c0, type: 3}
