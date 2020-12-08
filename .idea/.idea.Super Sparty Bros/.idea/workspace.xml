@@ -19,13 +19,61 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="44a17850-5dbd-4351-bf2a-090151c70867" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Main Camera Follow.prefab" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Main Camera Follow.prefab.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ProjectSettings/TimelineSettings.asset" afterDir="false" />
+    <list default="true" id="44a17850-5dbd-4351-bf2a-090151c70867" name="Default Changelist" comment="Added double jump">
+      <change afterPath="$PROJECT_DIR$/Assets/Animations/CoinController.controller" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Animations/CoinController.controller.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Animations/Coin_Idle.anim" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Animations/Coin_Idle.anim.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Animations/Enemy.controller" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Animations/Enemy.controller.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Animations/Enemy_Idle.anim" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Animations/Enemy_Idle.anim.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Animations/Enemy_Stunned.anim" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Animations/Enemy_Stunned.anim.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Animations/Enemy_Walk.anim" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Animations/Enemy_Walk.anim.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Animations/Rose.controller" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Animations/Rose.controller.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Animations/Rose_Wave.anim" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Animations/Rose_Wave.anim.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Animations/SpartyController.controller" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Animations/SpartyController.controller.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Coin Explosion.prefab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Coin Explosion.prefab.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Coin.prefab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Coin.prefab.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/DeathZone.prefab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/DeathZone.prefab.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Enemy.prefab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Enemy.prefab.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Moving Enemy.prefab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Moving Enemy.prefab.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Victory Explosion.prefab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Victory Explosion.prefab.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Victory.prefab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Victory.prefab.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Super Sparty Bros/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Super Sparty Bros/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/Sparty.controller" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/Sparty.controller.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/Enemy/Enemy_Idle_1.psd.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/Enemy/Enemy_Idle_1.psd.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/Enemy/Enemy_Idle_2.psd.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/Enemy/Enemy_Idle_2.psd.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/Enemy/Enemy_Stun_1.psd.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/Enemy/Enemy_Stun_1.psd.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/Enemy/Enemy_Stun_2.psd.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/Enemy/Enemy_Stun_2.psd.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/Enemy/Enemy_Stun_3.psd.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/Enemy/Enemy_Stun_3.psd.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/Enemy/Enemy_Walk_1.psd.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/Enemy/Enemy_Walk_1.psd.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/Enemy/Enemy_Walk_2.psd.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/Enemy/Enemy_Walk_2.psd.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/Objects/CoinIdle_1.psd.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/Objects/CoinIdle_1.psd.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/Objects/CoinIdle_2.psd.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/Objects/CoinIdle_2.psd.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/Objects/Rose.psd.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/Objects/Rose.psd.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Sparty.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Sparty.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/CharacterController2D.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CharacterController2D.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Coin.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Coin.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/DeathZone.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/DeathZone.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemy.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Enemy.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/EnemyStun.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/EnemyStun.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Victory.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Victory.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_Scenes/Level 1.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Scenes/Level 1.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,13 +83,15 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="HighlightingSettingsPerFile">
-    <setting file="mock://D:/DeplorableMountaineer/Projects/Unity/Super Sparty Bros/Assets/Scripts/CharacterController2D.cs" root0="SKIP_HIGHLIGHTING" />
-  </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
+        <option value="$PROJECT_DIR$/Assets/Scripts/Victory.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Coin.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/DeathZone.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Enemy.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/CharacterController2D.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/EnemyStun.cs" />
       </list>
     </option>
   </component>
@@ -96,8 +146,17 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1607348812638</updated>
-      <workItem from="1607348817743" duration="2162000" />
+      <workItem from="1607348817743" duration="4601000" />
+      <workItem from="1607397168502" duration="2170000" />
     </task>
+    <task id="LOCAL-00001" summary="Added double jump">
+      <created>1607368216503</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1607368216503</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -115,9 +174,22 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+    <MESSAGE value="Added double jump" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added double jump" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="93" y="93" width="2375" height="1215" key="VCS.FileHistoryDialog" timestamp="1607369298474">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="93" y="93" width="2375" height="1215" key="VCS.FileHistoryDialog/0.0.2560.1400/3840.0.1920.1040@0.0.2560.1400" timestamp="1607369298474" />
+    <state x="873" y="433" key="Vcs.Push.Dialog.v2" timestamp="1607368232590">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="873" y="433" key="Vcs.Push.Dialog.v2/0.0.2560.1400/3840.0.1920.1040@0.0.2560.1400" timestamp="1607368232590" />
   </component>
 </project>

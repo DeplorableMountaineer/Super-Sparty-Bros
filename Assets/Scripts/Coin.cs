@@ -1,33 +1,35 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Security.Cryptography;
 
-public class Coin : MonoBehaviour {
+public class Coin : MonoBehaviour
+{
+    public int coinValue = 1;
+    public bool taken = false;
+    public GameObject explosion;
 
-	public int coinValue = 1;
-	public bool taken = false;
-	public GameObject explosion;
+    // if the player touches the coin, it has not already been taken, and the player can move (not dead or victory)
+    // then take the coin
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        if ((other.CompareTag("Player")) && (!taken) &&
+            (other.gameObject.GetComponent<CharacterController2D>().playerCanMove))
+        {
+            // mark as taken so doesn't get taken multiple times
+            taken = true;
 
-	// if the player touches the coin, it has not already been taken, and the player can move (not dead or victory)
-	// then take the coin
-	void OnTriggerEnter2D (Collider2D other)
-	{
-		if ((other.tag == "Player" ) && (!taken) && (other.gameObject.GetComponent<CharacterController2D>().playerCanMove))
-		{
-			// mark as taken so doesn't get taken multiple times
-			taken=true;
+            // if explosion prefab is provide, then instantiate it
+            if (explosion)
+            {
+                var transform1 = transform;
+                Instantiate(explosion, transform1.position, transform1.rotation);
+            }
 
-			// if explosion prefab is provide, then instantiate it
-			if (explosion)
-			{
-				Instantiate(explosion,transform.position,transform.rotation);
-			}
+            // do the player collect coin thing
+            other.gameObject.GetComponent<CharacterController2D>().CollectCoin(coinValue);
 
-			// do the player collect coin thing
-			other.gameObject.GetComponent<CharacterController2D>().CollectCoin(coinValue);
-
-			// destroy the coin
-			DestroyObject(this.gameObject);
-		}
-	}
-
+            // destroy the coin
+            Destroy(this.gameObject);
+        }
+    }
 }

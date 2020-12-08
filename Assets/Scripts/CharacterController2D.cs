@@ -159,7 +159,7 @@ public class CharacterController2D : MonoBehaviour
     // Checking to see if the sprite should be flipped
     // this is done in LateUpdate since the Animator may override the localScale
     // this code will flip the player even if the animator is controlling scale
-    void LateUpdate()
+    private void LateUpdate()
     {
         // get the current scale
         Vector3 localScale = _transform.localScale;
@@ -187,7 +187,7 @@ public class CharacterController2D : MonoBehaviour
 
     // if the player collides with a MovingPlatform, then make it a child of that platform
     // so it will go for a ride on the MovingPlatform
-    void OnCollisionEnter2D(Collision2D other)
+    private void OnCollisionEnter2D(Collision2D other)
     {
         if (other.gameObject.CompareTag("MovingPlatform"))
         {
@@ -300,5 +300,10 @@ public class CharacterController2D : MonoBehaviour
         _transform.parent = null;
         _transform.position = spawnloc;
         _animator.SetTrigger(Respawn1);
+    }
+
+    public void EnemyBounce()
+    {
+        DoJump();
     }
 }
