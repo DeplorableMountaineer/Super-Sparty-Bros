@@ -1,8 +1,11 @@
-﻿using UnityEngine;
-using System.Collections;
+﻿using System.Collections;
+using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
+    private static readonly int Moving = Animator.StringToHash("Moving");
+    private static readonly int Stunned1 = Animator.StringToHash("Stunned");
+    private static readonly int Stand1 = Animator.StringToHash("Stand");
     [Range(0, 10)] public float moveSpeed = 4f; // enemy move speed when moving
     public int damageAmount = 10; // probably deal a lot of damage to kill player immediately
 
@@ -14,7 +17,7 @@ public class Enemy : MonoBehaviour
     public string stunnedLayer = "StunnedEnemy"; // name of the layer to put enemy on when stunned
     public string playerLayer = "Player"; // name of the player layer to ignore collisions with when stunned
 
-    [HideInInspector] public bool isStunned = false; // flag for isStunned
+    [HideInInspector] public bool isStunned; // flag for isStunned
 
     public GameObject[] myWaypoints; // to define the movement waypoints
 
@@ -26,29 +29,26 @@ public class Enemy : MonoBehaviour
     // SFXs
     public AudioClip stunnedSfx;
     public AudioClip attackSfx;
+    private Animator _animator;
+    private AudioSource _audio;
+
+    // store the layer number the enemy is on (setup in Awake)
+    private int _enemyLayer;
+    private float _moveTime;
+    private bool _moving = true;
+
+    // movement tracking
+    private int _myWaypointIndex; // used as index for My_Waypoints
+    private Rigidbody2D _rigidbody;
+
+    // store the layer number the enemy should be moved to when stunned
+    private int _stunnedLayer;
 
     // private variables below
 
     // store references to components on the gameObject
     private Transform _transform;
-    private Rigidbody2D _rigidbody;
-    private Animator _animator;
-    private AudioSource _audio;
-
-    // movement tracking
-    private int _myWaypointIndex = 0; // used as index for My_Waypoints
-    private float _moveTime;
-    private float _velocityX = 0f;
-    private bool _moving = true;
-
-    // store the layer number the enemy is on (setup in Awake)
-    private int _enemyLayer;
-
-    // store the layer number the enemy should be moved to when stunned
-    private int _stunnedLayer;
-    private static readonly int Moving = Animator.StringToHash("Moving");
-    private static readonly int Stunned1 = Animator.StringToHash("Stunned");
-    private static readonly int Stand1 = Animator.StringToHash("Stand");
+    private float _velocityX;
 
     private void Awake()
     {
@@ -72,17 +72,14 @@ public class Enemy : MonoBehaviour
             _audio = gameObject.AddComponent<AudioSource>();
         }
 
-        if (stunnedCheck == null)
-        {
-            Debug.LogError("stunnedCheck child gameobject needs to be setup on the enemy");
-        }
+        if (stunnedCheck == null) Debug.LogError("stunnedCheck child gameobject needs to be setup on the enemy");
 
         // setup moving defaults
         _moveTime = 0f;
         _moving = true;
 
         // determine the enemies specified layer
-        _enemyLayer = this.gameObject.layer;
+        _enemyLayer = gameObject.layer;
 
         // determine the stunned enemy layer number
         _stunnedLayer = LayerMask.NameToLayer(stunnedLayer);
@@ -98,12 +95,47 @@ public class Enemy : MonoBehaviour
         if (!isStunned)
         {
             if (Time.time >= _moveTime)
-            {
                 EnemyMovement();
-            }
             else
-            {
                 _animator.SetBool(Moving, false);
+        }
+    }
+
+    // if the Enemy collides with a MovingPlatform, then make it a child of that platform
+    // so it will go for a ride on the MovingPlatform
+    private void OnCollisionEnter2D(Collision2D other)
+    {
+        if (other.gameObject.CompareTag("MovingPlatform")) transform.parent = other.transform;
+    }
+
+    // if the enemy exits a collision with a moving platform, then unchild it
+    private void OnCollisionExit2D(Collision2D other)
+    {
+        if (other.gameObject.CompareTag("MovingPlatform")) transform.parent = null;
+    }
+
+    // Attack player
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Player") && !isStunned)
+        {
+            CharacterController2D player = collision.gameObject.GetComponent<CharacterController2D>();
+            if (player.playerCanMove)
+            {
+                // Make sure the enemy is facing the player on attack
+                Flip(collision.transform.position.x - _transform.position.x);
+
+                // attack sound
+                PlaySound(attackSfx);
+
+                // stop moving
+                _rigidbody.velocity = new Vector2(0, 0);
+
+                // apply damage to the player
+                player.ApplyDamage(damageAmount);
+
+                // stop to enjoy killing the player
+                _moveTime = Time.time + stunnedTime;
             }
         }
     }
@@ -112,7 +144,7 @@ public class Enemy : MonoBehaviour
     private void EnemyMovement()
     {
         // if there isn't anything in My_Waypoints
-        if ((myWaypoints.Length != 0) && (_moving))
+        if (myWaypoints.Length != 0 && _moving)
         {
             // make sure the enemy is facing the waypoint (based on previous movement)
             Flip(_velocityX);
@@ -158,58 +190,13 @@ public class Enemy : MonoBehaviour
         // get the current scale
         Vector3 localScale = _transform.localScale;
 
-        if ((vx > 0f) && (localScale.x < 0f))
+        if (vx > 0f && localScale.x < 0f)
             localScale.x *= -1;
-        else if ((vx < 0f) && (localScale.x > 0f))
+        else if (vx < 0f && localScale.x > 0f)
             localScale.x *= -1;
 
         // update the scale
         _transform.localScale = localScale;
-    }
-
-    // Attack player
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if ((collision.CompareTag("Player")) && !isStunned)
-        {
-            CharacterController2D player = collision.gameObject.GetComponent<CharacterController2D>();
-            if (player.playerCanMove)
-            {
-                // Make sure the enemy is facing the player on attack
-                Flip(collision.transform.position.x - _transform.position.x);
-
-                // attack sound
-                PlaySound(attackSfx);
-
-                // stop moving
-                _rigidbody.velocity = new Vector2(0, 0);
-
-                // apply damage to the player
-                player.ApplyDamage(damageAmount);
-
-                // stop to enjoy killing the player
-                _moveTime = Time.time + stunnedTime;
-            }
-        }
-    }
-
-    // if the Enemy collides with a MovingPlatform, then make it a child of that platform
-    // so it will go for a ride on the MovingPlatform
-    private void OnCollisionEnter2D(Collision2D other)
-    {
-        if (other.gameObject.CompareTag("MovingPlatform"))
-        {
-            this.transform.parent = other.transform;
-        }
-    }
-
-    // if the enemy exits a collision with a moving platform, then unchild it
-    private void OnCollisionExit2D(Collision2D other)
-    {
-        if (other.gameObject.CompareTag("MovingPlatform"))
-        {
-            this.transform.parent = null;
-        }
     }
 
     // play sound through the audiosource on the gameobject
@@ -233,7 +220,7 @@ public class Enemy : MonoBehaviour
             _rigidbody.velocity = new Vector2(0, 0);
 
             // switch layer to stunned layer so no collisions with the player while stunned
-            this.gameObject.layer = _stunnedLayer;
+            gameObject.layer = _stunnedLayer;
             stunnedCheck.layer = _stunnedLayer;
 
             // start coroutine to stand up eventually
@@ -250,7 +237,7 @@ public class Enemy : MonoBehaviour
         isStunned = false;
 
         // switch layer back to regular layer for regular collisions with the player
-        this.gameObject.layer = _enemyLayer;
+        gameObject.layer = _enemyLayer;
         stunnedCheck.layer = _enemyLayer;
 
         // provide the player with feedback

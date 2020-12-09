@@ -1,19 +1,17 @@
 ﻿using UnityEngine;
-using System.Collections;
-using System.Security.Cryptography;
 
 public class Coin : MonoBehaviour
 {
     public int coinValue = 1;
-    public bool taken = false;
+    public bool taken;
     public GameObject explosion;
 
     // if the player touches the coin, it has not already been taken, and the player can move (not dead or victory)
     // then take the coin
-    void OnTriggerEnter2D(Collider2D other)
+    private void OnTriggerEnter2D(Collider2D other)
     {
-        if ((other.CompareTag("Player")) && (!taken) &&
-            (other.gameObject.GetComponent<CharacterController2D>().playerCanMove))
+        if (other.CompareTag("Player") && !taken &&
+            other.gameObject.GetComponent<CharacterController2D>().playerCanMove)
         {
             // mark as taken so doesn't get taken multiple times
             taken = true;
@@ -21,7 +19,7 @@ public class Coin : MonoBehaviour
             // if explosion prefab is provide, then instantiate it
             if (explosion)
             {
-                var transform1 = transform;
+                Transform transform1 = transform;
                 Instantiate(explosion, transform1.position, transform1.rotation);
             }
 
@@ -29,7 +27,7 @@ public class Coin : MonoBehaviour
             other.gameObject.GetComponent<CharacterController2D>().CollectCoin(coinValue);
 
             // destroy the coin
-            Destroy(this.gameObject);
+            Destroy(gameObject);
         }
     }
 }

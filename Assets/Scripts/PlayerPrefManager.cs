@@ -7,7 +7,9 @@ public static class PlayerPrefManager
 {
     public static int GetLives()
     {
-        return PlayerPrefs.HasKey("Lives") ? PlayerPrefs.GetInt("Lives") : 0;
+        if (PlayerPrefs.HasKey("Lives"))
+            return PlayerPrefs.GetInt("Lives");
+        return 0;
     }
 
     public static void SetLives(int lives)
@@ -17,7 +19,9 @@ public static class PlayerPrefManager
 
     public static int GetScore()
     {
-        return PlayerPrefs.HasKey("Score") ? PlayerPrefs.GetInt("Score") : 0;
+        if (PlayerPrefs.HasKey("Score"))
+            return PlayerPrefs.GetInt("Score");
+        return 0;
     }
 
     public static void SetScore(int score)
@@ -27,7 +31,9 @@ public static class PlayerPrefManager
 
     public static int GetHighscore()
     {
-        return PlayerPrefs.HasKey("Highscore") ? PlayerPrefs.GetInt("Highscore") : 0;
+        if (PlayerPrefs.HasKey("Highscore"))
+            return PlayerPrefs.GetInt("Highscore");
+        return 0;
     }
 
     public static void SetHighscore(int highscore)
@@ -67,7 +73,7 @@ public static class PlayerPrefManager
     // determine if a levelname is currently unlocked (i.e., it has a key set)
     public static bool LevelIsUnlocked(string levelName)
     {
-        return (PlayerPrefs.HasKey(levelName));
+        return PlayerPrefs.HasKey(levelName);
     }
 
     // output the defined Player Prefs to the console
@@ -78,15 +84,9 @@ public static class PlayerPrefManager
 
         // loop over the values and output to the console
         foreach (string value in values)
-        {
             if (PlayerPrefs.HasKey(value))
-            {
                 Debug.Log(value + " = " + PlayerPrefs.GetInt(value));
-            }
             else
-            {
                 Debug.Log(value + " is not set.");
-            }
-        }
     }
 }

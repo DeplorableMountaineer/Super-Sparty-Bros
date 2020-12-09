@@ -1,7 +1,9 @@
 ﻿using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using UnityEngine.UI; // include UI namespace so can reference UI elements
+using UnityEngine.UI;
+
+// include UI namespace so can reference UI elements
 
 // include so we can manipulate SceneManager
 
@@ -15,8 +17,8 @@ public class GameManager : MonoBehaviour
     public string levelAfterGameOver;
 
     // game performance
-    public int score = 0;
-    public int highscore = 0;
+    public int score;
+    public int highscore;
     public int startLives = 3;
     public int lives = 3;
 
@@ -29,15 +31,15 @@ public class GameManager : MonoBehaviour
 
     // private variables
     private GameObject _player;
-    private Vector3 _spawnLocation;
     private Scene _scene;
+    private Vector3 _spawnLocation;
 
     // set things up here
     private void Awake()
     {
         // setup reference to game manager
         if (Gm == null)
-            Gm = this.GetComponent<GameManager>();
+            Gm = GetComponent<GameManager>();
 
         // setup all the variables, the UI, and provide errors if things not setup properly.
         SetupDefaults();
@@ -132,23 +134,17 @@ public class GameManager : MonoBehaviour
     private void RefreshGUI()
     {
         // set the text elements of the UI
-        uiScore.text = "Score: " + score.ToString();
-        uiHighScore.text = "Highscore: " + highscore.ToString();
+        uiScore.text = "Score: " + score;
+        uiHighScore.text = "Highscore: " + highscore;
         uiLevel.text = _scene.name;
 
         // turn on the appropriate number of life indicators in the UI based on the number of lives left
         for (int i = 0; i < uiExtraLives.Length; i++)
-        {
-            if (i < (lives - 1))
-            {
+            if (i < lives - 1)
                 // show one less than the number of lives since you only typically show lifes after the current life in UI
                 uiExtraLives[i].SetActive(true);
-            }
             else
-            {
                 uiExtraLives[i].SetActive(false);
-            }
-        }
     }
 
     // public function to add points and update the gui and highscore player prefs accordingly
@@ -158,13 +154,13 @@ public class GameManager : MonoBehaviour
         score += amount;
 
         // update UI
-        uiScore.text = "Score: " + score.ToString();
+        uiScore.text = "Score: " + score;
 
         // if score>highscore then update the highscore UI too
         if (score > highscore)
         {
             highscore = score;
-            uiHighScore.text = "Highscore: " + score.ToString();
+            uiHighScore.text = "Highscore: " + score;
         }
     }
 

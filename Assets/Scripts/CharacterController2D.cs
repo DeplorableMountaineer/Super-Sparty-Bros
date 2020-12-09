@@ -1,9 +1,19 @@
-﻿using UnityEngine;
-using System.Collections;
-using UnityEngine.SceneManagement; // include so we can load new scenes
+﻿using System.Collections;
+using UnityEngine;
+using UnityEngine.SceneManagement;
+using UnityStandardAssets.CrossPlatformInput;
+
+// include so we can load new scenes
 
 public class CharacterController2D : MonoBehaviour
 {
+    private static readonly int Grounded = Animator.StringToHash("Grounded");
+    private static readonly int Running = Animator.StringToHash("Running");
+    private static readonly int Death = Animator.StringToHash("Death");
+    private static readonly int Victory1 = Animator.StringToHash("Victory");
+
+    private static readonly int Respawn1 = Animator.StringToHash("Respawn");
+
     // player controls
     [Range(0.0f, 10.0f)] // create a slider in the editor and set limits on moveSpeed
     public float moveSpeed = 3f;
@@ -29,35 +39,30 @@ public class CharacterController2D : MonoBehaviour
     public AudioClip fallSfx;
     public AudioClip jumpSfx;
     public AudioClip victorySfx;
-
-    // private variables below
-
-    // store references to components on the gameObject
-    private Transform _transform;
-    private Rigidbody2D _rigidbody;
     private Animator _animator;
     private AudioSource _audio;
-
-    // hold player motion in this timestep
-    private float _velocityX;
-    private float _velocityY;
+    private bool _canDoubleJump;
 
     // player tracking
     private bool _facingRight = true;
     private bool _isGrounded;
     private bool _isRunning;
-    private bool _canDoubleJump;
-
-    // store the layer the player is on (setup in Awake)
-    int _playerLayer;
 
     // number of layer that Platforms are on (setup in Awake)
-    int _platformLayer;
-    private static readonly int Grounded = Animator.StringToHash("Grounded");
-    private static readonly int Running = Animator.StringToHash("Running");
-    private static readonly int Death = Animator.StringToHash("Death");
-    private static readonly int Victory1 = Animator.StringToHash("Victory");
-    private static readonly int Respawn1 = Animator.StringToHash("Respawn");
+    private int _platformLayer;
+
+    // store the layer the player is on (setup in Awake)
+    private int _playerLayer;
+    private Rigidbody2D _rigidbody;
+
+    // private variables below
+
+    // store references to components on the gameObject
+    private Transform _transform;
+
+    // hold player motion in this timestep
+    private float _velocityX;
+    private float _velocityY;
 
     private void Awake()
     {
@@ -82,7 +87,7 @@ public class CharacterController2D : MonoBehaviour
         }
 
         // determine the player's specified layer
-        _playerLayer = this.gameObject.layer;
+        _playerLayer = gameObject.layer;
 
         // determine the platform's specified layer
         _platformLayer = LayerMask.NameToLayer("Platform");
@@ -92,12 +97,12 @@ public class CharacterController2D : MonoBehaviour
     private void Update()
     {
         // exit update if player cannot move or game is paused
-        if (!playerCanMove || (Time.timeScale == 0f))
+        if (!playerCanMove || Time.timeScale == 0f)
             return;
 
         // determine horizontal
         // velocity change based on the horizontal input
-        _velocityX = Input.GetAxisRaw("Horizontal");
+        _velocityX = CrossPlatformInputManager.GetAxisRaw("Horizontal");
 
         // Determine if running based on the horizontal movement
         _isRunning = _velocityX != 0;
@@ -118,12 +123,12 @@ public class CharacterController2D : MonoBehaviour
 
         if (_isGrounded) _canDoubleJump = true;
 
-        if (_isGrounded && Input.GetButtonDown("Jump")
+        if (_isGrounded && CrossPlatformInputManager.GetButtonDown("Jump")
         ) // If grounded AND jump button pressed, then allow the player to jump
         {
             DoJump();
         }
-        else if (_canDoubleJump && Input.GetButtonDown("Jump")
+        else if (_canDoubleJump && CrossPlatformInputManager.GetButtonDown("Jump")
         ) // If can double jump AND jump button pressed, then allow the player to jump
         {
             _canDoubleJump = false;
@@ -132,10 +137,7 @@ public class CharacterController2D : MonoBehaviour
 
         // If the player stops jumping mid jump and player is not yet falling
         // then set the vertical velocity to 0 (he will start to fall from gravity)
-        if (Input.GetButtonUp("Jump") && _velocityY > 0f)
-        {
-            _velocityY = 0f;
-        }
+        if (CrossPlatformInputManager.GetButtonUp("Jump") && _velocityY > 0f) _velocityY = 0f;
 
         // Change the actual velocity on the rigidbody
         _rigidbody.velocity = new Vector2(_velocityX * moveSpeed, _velocityY);
@@ -143,7 +145,42 @@ public class CharacterController2D : MonoBehaviour
         // if moving up then don't collide with platform layer
         // this allows the player to jump up through things on the platform layer
         // NOTE: requires the platforms to be on a layer named "Platform"
-        Physics2D.IgnoreLayerCollision(_playerLayer, _platformLayer, (_velocityY > 0.0f));
+        Physics2D.IgnoreLayerCollision(_playerLayer, _platformLayer, _velocityY > 0.0f);
+    }
+
+    // Checking to see if the sprite should be flipped
+    // this is done in LateUpdate since the Animator may override the localScale
+    // this code will flip the player even if the animator is controlling scale
+    private void LateUpdate()
+    {
+        // get the current scale
+        Vector3 localScale = _transform.localScale;
+
+        if (_velocityX > 0) // moving right so face right
+            _facingRight = true;
+        else if (_velocityX < 0)
+            // moving left so face left
+            _facingRight = false;
+
+        // check to see if scale x is right for the player
+        // if not, multiple by -1 which is an easy way to flip a sprite
+        if (_facingRight && localScale.x < 0 || !_facingRight && localScale.x > 0) localScale.x *= -1;
+
+        // update the scale
+        _transform.localScale = localScale;
+    }
+
+    // if the player collides with a MovingPlatform, then make it a child of that platform
+    // so it will go for a ride on the MovingPlatform
+    private void OnCollisionEnter2D(Collision2D other)
+    {
+        if (other.gameObject.CompareTag("MovingPlatform")) transform.parent = other.transform;
+    }
+
+    // if the player exits a collision with a moving platform, then unchild it
+    private void OnCollisionExit2D(Collision2D other)
+    {
+        if (other.gameObject.CompareTag("MovingPlatform")) transform.parent = null;
     }
 
     private void DoJump()
@@ -156,56 +193,8 @@ public class CharacterController2D : MonoBehaviour
         PlaySound(jumpSfx);
     }
 
-    // Checking to see if the sprite should be flipped
-    // this is done in LateUpdate since the Animator may override the localScale
-    // this code will flip the player even if the animator is controlling scale
-    private void LateUpdate()
-    {
-        // get the current scale
-        Vector3 localScale = _transform.localScale;
-
-        if (_velocityX > 0) // moving right so face right
-        {
-            _facingRight = true;
-        }
-        else if (_velocityX < 0)
-        {
-            // moving left so face left
-            _facingRight = false;
-        }
-
-        // check to see if scale x is right for the player
-        // if not, multiple by -1 which is an easy way to flip a sprite
-        if (((_facingRight) && (localScale.x < 0)) || ((!_facingRight) && (localScale.x > 0)))
-        {
-            localScale.x *= -1;
-        }
-
-        // update the scale
-        _transform.localScale = localScale;
-    }
-
-    // if the player collides with a MovingPlatform, then make it a child of that platform
-    // so it will go for a ride on the MovingPlatform
-    private void OnCollisionEnter2D(Collision2D other)
-    {
-        if (other.gameObject.CompareTag("MovingPlatform"))
-        {
-            this.transform.parent = other.transform;
-        }
-    }
-
-    // if the player exits a collision with a moving platform, then unchild it
-    void OnCollisionExit2D(Collision2D other)
-    {
-        if (other.gameObject.CompareTag("MovingPlatform"))
-        {
-            this.transform.parent = null;
-        }
-    }
-
     // do what needs to be done to freeze the player
-    void FreezeMotion()
+    private void FreezeMotion()
     {
         playerCanMove = false;
         _rigidbody.velocity = new Vector2(0, 0);
@@ -213,14 +202,14 @@ public class CharacterController2D : MonoBehaviour
     }
 
     // do what needs to be done to unfreeze the player
-    void UnFreezeMotion()
+    private void UnFreezeMotion()
     {
         playerCanMove = true;
         _rigidbody.isKinematic = false;
     }
 
     // play sound through the audiosource on the gameobject
-    void PlaySound(AudioClip clip)
+    private void PlaySound(AudioClip clip)
     {
         _audio.PlayOneShot(clip);
     }
@@ -253,7 +242,7 @@ public class CharacterController2D : MonoBehaviour
     }
 
     // coroutine to kill the player
-    IEnumerator KillPlayer()
+    private IEnumerator KillPlayer()
     {
         if (playerCanMove)
         {
