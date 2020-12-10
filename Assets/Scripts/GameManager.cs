@@ -49,7 +49,7 @@ public class GameManager : MonoBehaviour
     private void Update()
     {
         // if ESC pressed then pause the game
-        if (!Input.GetKeyDown(KeyCode.Escape)) return;
+        if (!Input.GetButtonDown("Cancel")) return;
         if (Time.timeScale > 0f)
         {
             uiGamePaused.SetActive(true); // this brings up the pause UI
@@ -139,12 +139,7 @@ public class GameManager : MonoBehaviour
         uiLevel.text = _scene.name;
 
         // turn on the appropriate number of life indicators in the UI based on the number of lives left
-        for (int i = 0; i < uiExtraLives.Length; i++)
-            if (i < lives - 1)
-                // show one less than the number of lives since you only typically show lifes after the current life in UI
-                uiExtraLives[i].SetActive(true);
-            else
-                uiExtraLives[i].SetActive(false);
+        for (int i = 0; i < uiExtraLives.Length; i++) uiExtraLives[i].SetActive(i < lives - 1);
     }
 
     // public function to add points and update the gui and highscore player prefs accordingly

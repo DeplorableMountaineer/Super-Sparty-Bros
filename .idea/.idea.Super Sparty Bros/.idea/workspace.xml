@@ -20,62 +20,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="44a17850-5dbd-4351-bf2a-090151c70867" name="Default Changelist" comment="Added double jump">
-      <change afterPath="$PROJECT_DIR$/Assets/_Scenes/GameLoseSettings.lighting" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_Scenes/GameLoseSettings.lighting.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_Scenes/GameWinSettings.lighting" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_Scenes/GameWinSettings.lighting.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_Scenes/LoadingSettings.lighting" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_Scenes/LoadingSettings.lighting.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_Scenes/MainMenuSettings.lighting" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_Scenes/MainMenuSettings.lighting.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Super Sparty Bros/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Super Sparty Bros/.idea/contentModel.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Super Sparty Bros/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Super Sparty Bros/.idea/indexLayout.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Super Sparty Bros/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Super Sparty Bros/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/Player/Sparty.psd" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/Player/Sparty.psd" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/Player/Sparty.psd.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/Player/Sparty.psd.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ConsolePro/ConsoleProDebug.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ConsolePro/ConsoleProDebug.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ConsolePro/Remote/ConsoleProRemoteServer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ConsolePro/Remote/ConsoleProRemoteServer.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ConsolePro/Remote/LiteNetLib/FastBitConverter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ConsolePro/Remote/LiteNetLib/FastBitConverter.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ConsolePro/Remote/LiteNetLib/INetEventListener.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ConsolePro/Remote/LiteNetLib/INetEventListener.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ConsolePro/Remote/LiteNetLib/NatPunchModule.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ConsolePro/Remote/LiteNetLib/NatPunchModule.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ConsolePro/Remote/LiteNetLib/NetConstants.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ConsolePro/Remote/LiteNetLib/NetConstants.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ConsolePro/Remote/LiteNetLib/NetDataReader.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ConsolePro/Remote/LiteNetLib/NetDataReader.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ConsolePro/Remote/LiteNetLib/NetDataWriter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ConsolePro/Remote/LiteNetLib/NetDataWriter.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ConsolePro/Remote/LiteNetLib/NetDebug.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ConsolePro/Remote/LiteNetLib/NetDebug.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ConsolePro/Remote/LiteNetLib/NetEndPoint.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ConsolePro/Remote/LiteNetLib/NetEndPoint.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ConsolePro/Remote/LiteNetLib/NetManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ConsolePro/Remote/LiteNetLib/NetManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ConsolePro/Remote/LiteNetLib/NetPacket.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ConsolePro/Remote/LiteNetLib/NetPacket.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ConsolePro/Remote/LiteNetLib/NetPacketPool.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ConsolePro/Remote/LiteNetLib/NetPacketPool.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ConsolePro/Remote/LiteNetLib/NetPeer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ConsolePro/Remote/LiteNetLib/NetPeer.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ConsolePro/Remote/LiteNetLib/NetPeerCollection.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ConsolePro/Remote/LiteNetLib/NetPeerCollection.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ConsolePro/Remote/LiteNetLib/NetSerializer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ConsolePro/Remote/LiteNetLib/NetSerializer.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ConsolePro/Remote/LiteNetLib/NetSocket.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ConsolePro/Remote/LiteNetLib/NetSocket.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ConsolePro/Remote/LiteNetLib/NetThread.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ConsolePro/Remote/LiteNetLib/NetThread.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ConsolePro/Remote/LiteNetLib/NetUtils.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ConsolePro/Remote/LiteNetLib/NetUtils.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ConsolePro/Remote/LiteNetLib/NtpSyncModule.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ConsolePro/Remote/LiteNetLib/NtpSyncModule.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ConsolePro/Remote/LiteNetLib/ReliableChannel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ConsolePro/Remote/LiteNetLib/ReliableChannel.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ConsolePro/Remote/LiteNetLib/SequencedChannel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ConsolePro/Remote/LiteNetLib/SequencedChannel.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ConsolePro/Remote/LiteNetLib/SimpleChannel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ConsolePro/Remote/LiteNetLib/SimpleChannel.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Editor/DeleteAllPlayerPrefs.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Editor/DeleteAllPlayerPrefs.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Editor/GameManagerEditor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Editor/GameManagerEditor.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Camera2DFollow.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Camera2DFollow.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CharacterController2D.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CharacterController2D.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Coin.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Coin.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/DeathZone.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/DeathZone.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemy.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Enemy.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/EnemyStun.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/EnemyStun.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/MainMenuManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/MainMenuManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/MainMenuManager.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/MainMenuManager.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PlatformMover.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PlatformMover.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PlayerPrefManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PlayerPrefManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PlayerPrefManager.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PlayerPrefManager.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ScreenshotUtility.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ScreenshotUtility.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/TimedObjectDestructor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/TimedObjectDestructor.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Victory.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Victory.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Scenes/Level 1.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Scenes/Level 1.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/InputManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/InputManager.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/MenuPauseAndLoadLevel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/MenuPauseAndLoadLevel.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -97,13 +47,14 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/Enemy.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/EnemyStun.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/PlayerPrefManager.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Editor/GameManagerEditor.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/MenuPauseAndLoadLevel.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/MenuButtonLoadLevel.cs" />
         <option value="$PROJECT_DIR$/Assets/Editor/DeleteAllPlayerPrefs.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/MainMenuManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/CharacterController2D.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/MainMenuManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Camera2DFollow.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/MenuPauseAndLoadLevel.cs" />
       </list>
     </option>
   </component>
@@ -132,6 +83,14 @@
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
+    <configuration name="Standalone Player" type="RunUnityExe" factoryName="Unity Executable">
+      <option name="EXE_PATH" value="$PROJECT_DIR$/Cooked/X86_64\Super Sparty Bros.exe" />
+      <option name="PROGRAM_PARAMETERS" value="" />
+      <option name="WORKING_DIRECTORY" value="D:\DeplorableMountaineer\Projects\Unity\Super Sparty Bros\Cooked\X86_64" />
+      <option name="PASS_PARENT_ENVS" value="1" />
+      <option name="USE_EXTERNAL_CONSOLE" value="0" />
+      <method v="2" />
+    </configuration>
     <configuration name="Attach to Unity Editor &amp; Play" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="UNITY_ATTACH_AND_PLAY" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
@@ -162,6 +121,7 @@
       <workItem from="1607348817743" duration="4601000" />
       <workItem from="1607397168502" duration="2170000" />
       <workItem from="1607448582115" duration="5542000" />
+      <workItem from="1607568131502" duration="929000" />
     </task>
     <task id="LOCAL-00001" summary="Added double jump">
       <created>1607368216503</created>

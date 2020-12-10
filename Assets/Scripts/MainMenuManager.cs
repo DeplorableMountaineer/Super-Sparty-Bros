@@ -86,10 +86,7 @@ public class MainMenuManager : MonoBehaviour
             levelButtonLabel.text = levelname;
 
             // determine if the button should be interactable based on if the level is unlocked
-            if (PlayerPrefManager.LevelIsUnlocked(levelname))
-                levelButtonScript.interactable = true;
-            else
-                levelButtonScript.interactable = false;
+            levelButtonScript.interactable = PlayerPrefManager.LevelIsUnlocked(levelname);
         }
     }
 
@@ -110,6 +107,9 @@ public class MainMenuManager : MonoBehaviour
             // default will cover all of these. 
             case RuntimePlatform.WindowsEditor:
             case RuntimePlatform.OSXEditor:
+                quitButton.SetActive(true);
+                break;
+
             case RuntimePlatform.IPhonePlayer:
             case RuntimePlatform.WebGLPlayer:
                 quitButton.SetActive(false);
@@ -125,7 +125,7 @@ public class MainMenuManager : MonoBehaviour
     // Public functions below that are available via the UI Event Triggers, such as on Buttons.
 
     // Show the proper menu
-    public void ShowMenu(string name)
+    public void ShowMenu(string menuName)
     {
         // turn all menus off
         mainMenu.SetActive(false);
@@ -133,7 +133,7 @@ public class MainMenuManager : MonoBehaviour
         levelsMenu.SetActive(false);
 
         // turn on desired menu and set default selected button for controller input
-        switch (name)
+        switch (menuName)
         {
             case "MainMenu":
                 mainMenu.SetActive(true);
@@ -166,6 +166,9 @@ public class MainMenuManager : MonoBehaviour
     // quit the game
     public void QuitGame()
     {
+#if UNITY_EDITOR
+        UnityEditor.EditorApplication.isPlaying = false;
+#endif
         Application.Quit();
     }
 }

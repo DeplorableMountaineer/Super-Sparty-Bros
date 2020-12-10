@@ -1,59 +1,59 @@
 using UnityEngine;
 
 // this comes from the Unity Standard Assets
-namespace UnityStandardAssets._2D
+public class Camera2DFollow : MonoBehaviour
 {
-    public class Camera2DFollow : MonoBehaviour
+    public Transform target;
+    public float damping = 1;
+    public float lookAheadFactor = 3;
+    public float lookAheadReturnSpeed = 0.5f;
+    public float lookAheadMoveThreshold = 0.1f;
+    private Vector3 _mCurrentVelocity;
+    private Vector3 _mLastTargetPosition;
+    private Vector3 _mLookAheadPos;
+
+    // private variables
+    private float _mOffsetZ;
+
+    // Use this for initialization
+    private void Start()
     {
-        public Transform target;
-        public float damping = 1;
-        public float lookAheadFactor = 3;
-        public float lookAheadReturnSpeed = 0.5f;
-        public float lookAheadMoveThreshold = 0.1f;
-        private Vector3 _mCurrentVelocity;
-        private Vector3 _mLastTargetPosition;
-        private Vector3 _mLookAheadPos;
+        Vector3 position = target.position;
+        _mLastTargetPosition = position;
+        Transform transform1 = transform;
+        _mOffsetZ = (transform1.position - position).z;
+        transform1.parent = null;
 
-        // private variables
-        private float _mOffsetZ;
+        // if target not set, then set it to the player
+        if (target == null) target = GameObject.FindGameObjectWithTag("Player").transform;
 
-        // Use this for initialization
-        private void Start()
-        {
-            _mLastTargetPosition = target.position;
-            _mOffsetZ = (transform.position - target.position).z;
-            transform.parent = null;
+        if (target == null)
+            Debug.LogError("Target not set on Camera2DFollow.");
+    }
 
-            // if target not set, then set it to the player
-            if (target == null) target = GameObject.FindGameObjectWithTag("Player").transform;
+    // Update is called once per frame
+    private void Update()
+    {
+        if (target == null)
+            return;
 
-            if (target == null)
-                Debug.LogError("Target not set on Camera2DFollow.");
-        }
+        // only update lookahead pos if accelerating or changed direction
+        float xMoveDelta = (target.position - _mLastTargetPosition).x;
 
-        // Update is called once per frame
-        private void Update()
-        {
-            if (target == null)
-                return;
+        bool updateLookAheadTarget = Mathf.Abs(xMoveDelta) > lookAheadMoveThreshold;
 
-            // only update lookahead pos if accelerating or changed direction
-            float xMoveDelta = (target.position - _mLastTargetPosition).x;
+        if (updateLookAheadTarget)
+            _mLookAheadPos = Vector3.right * (lookAheadFactor * Mathf.Sign(xMoveDelta));
+        else
+            _mLookAheadPos =
+                Vector3.MoveTowards(_mLookAheadPos, Vector3.zero, Time.deltaTime * lookAheadReturnSpeed);
 
-            bool updateLookAheadTarget = Mathf.Abs(xMoveDelta) > lookAheadMoveThreshold;
+        Vector3 position = target.position;
+        Vector3 aheadTargetPos = position + _mLookAheadPos + Vector3.forward * _mOffsetZ;
+        Vector3 newPos = Vector3.SmoothDamp(transform.position, aheadTargetPos, ref _mCurrentVelocity, damping);
 
-            if (updateLookAheadTarget)
-                _mLookAheadPos = lookAheadFactor * Vector3.right * Mathf.Sign(xMoveDelta);
-            else
-                _mLookAheadPos =
-                    Vector3.MoveTowards(_mLookAheadPos, Vector3.zero, Time.deltaTime * lookAheadReturnSpeed);
+        transform.position = newPos;
 
-            Vector3 aheadTargetPos = target.position + _mLookAheadPos + Vector3.forward * _mOffsetZ;
-            Vector3 newPos = Vector3.SmoothDamp(transform.position, aheadTargetPos, ref _mCurrentVelocity, damping);
-
-            transform.position = newPos;
-
-            _mLastTargetPosition = target.position;
-        }
+        _mLastTargetPosition = position;
     }
 }

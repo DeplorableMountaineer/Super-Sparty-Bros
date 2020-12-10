@@ -9,9 +9,9 @@ public class MenuPauseAndLoadLevel : MonoBehaviour
     public float delay = 2f;
 
     // use invoke to wait for a delay then call LoadLevel
-    private void Update()
+    private void Start()
     {
-        Invoke("LoadLevel", delay);
+        Invoke(nameof(LoadLevel), delay);
     }
 
     // load the specified level

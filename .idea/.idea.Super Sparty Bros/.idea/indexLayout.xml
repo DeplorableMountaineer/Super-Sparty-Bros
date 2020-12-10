@@ -24,8 +24,10 @@
     <explicitExcludes>
       <Path>.git</Path>
       <Path>.idea</Path>
+      <Path>Cooked</Path>
       <Path>Library</Path>
       <Path>Logs</Path>
+      <Path>Screenshots</Path>
       <Path>Temp</Path>
       <Path>UserSettings</Path>
       <Path>obj</Path>
